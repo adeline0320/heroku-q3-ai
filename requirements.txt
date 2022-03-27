@@ -109,7 +109,7 @@ Sphinx==4.2.0
 #statsmodels==0.12.2
 streamlit==1.7.0
 
-tables==3.6.1
+#tables==3.6.1
 TBB==0.2
 tensorboard==2.8.0
 tensorboard-data-server==0.6.1
