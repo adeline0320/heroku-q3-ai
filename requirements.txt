@@ -106,7 +106,7 @@ simplegeneric==0.8.1
 #sip==4.19.13
 smmap==5.0.0
 Sphinx==4.2.0
-statsmodels==0.12.2
+#statsmodels==0.12.2
 streamlit==1.7.0
 
 tables==3.6.1
