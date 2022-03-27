@@ -80,7 +80,7 @@ pydotplus==2.0.2
 pygad==2.16.3
 pyls-spyder==0.4.0
 Pympler==1.0.1
-pyodbc===4.0.0-unsupported
+#pyodbc===4.0.0-unsupported
 pyreadline==2.1
 pytest==6.2.4
 pytholog==2.4.1
