@@ -120,3 +120,16 @@
 # st.text("Accuracy of %s is %s"%("RF", acc))
 # cm = confusion_matrix(y_test, y_predrf)
 # st.text("Confusion Matrix of %s is %s"%("RF", cm))
+
+import os
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello world!"
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
