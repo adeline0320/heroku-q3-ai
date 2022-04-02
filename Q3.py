@@ -62,6 +62,7 @@ X = pd.get_dummies(X,drop_first = True)
 option = st.selectbox('Select the number of cluster you wish to see:',
                     ['<select>','2','3','5'],
                     )
+st.write(option)
 if option == '2':
     st.write("You have select:",option)
 
