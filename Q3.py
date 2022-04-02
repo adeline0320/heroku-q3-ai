@@ -49,15 +49,15 @@ y = file['Score']
 
 X = pd.get_dummies(X,drop_first = True)
 
-k_mean_selection = [2,3,5]
-for i in range(3):
-    newData = pd.read_csv("Bank_CreditScoring.csv")
-    KM = KMeans(n_clusters = k_mean_selection[i],random_state = 12)
-    KM.fit(X)
-    label = KM.predict(X)
+# k_mean_selection = [2,3,5]
+# for i in range(3):
+#     newData = pd.read_csv("Bank_CreditScoring.csv")
+#     KM = KMeans(n_clusters = k_mean_selection[i],random_state = 12)
+#     KM.fit(X)
+#     label = KM.predict(X)
 
-    newData['Label']=label
-    newData.to_csv('K_mean_' + str(k_mean_selection[i]) + '.csv',index= False)
+#     newData['Label']=label
+#     newData.to_csv('K_mean_' + str(k_mean_selection[i]) + '.csv',index= False)
 
 option = st.selectbox('Select the number of cluster you wish to see:',
                     ['<select>','2','3','5'],
