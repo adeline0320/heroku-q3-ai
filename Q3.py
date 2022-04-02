@@ -65,6 +65,7 @@ option = st.selectbox('Select the number of cluster you wish to see:',
 st.write("You have select:",option)
 
 if option != '<select>':
+    st.write('here')
     newData =pd.read_csv('K_mean_' + str(option)+'.csv')
     st.write("Check again the class variable:")
     decision = file["Decision"].value_counts().sort_index()
