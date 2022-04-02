@@ -11,6 +11,7 @@ from sklearn.metrics import roc_auc_score
 from sklearn import svm, tree
 from sklearn import metrics
 from sklearn.ensemble import RandomForestClassifier
+from imblearn import under_sampling, over_sampling
 from imblearn.over_sampling import RandomOverSampler
 
 
