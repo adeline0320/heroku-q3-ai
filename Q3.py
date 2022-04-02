@@ -57,16 +57,15 @@ X = pd.get_dummies(X,drop_first = True)
 
 #     newData['Label']=label
 #     newData.to_csv('K_mean_' + str(k_mean_selection[i]) + '.csv',index= False)
-# k_mean_select = ['<select','2','3','5']
-# option = st.selectbox('Select the number of cluster you wish to see:',k_mean_select)
+k_mean_select = ['<select','2','3','5']
+option = st.selectbox('Select the number of cluster you wish to see:',k_mean_select)
 
-n = st.number_input('Number',step = 1)
-st.write(st.write(f'{n} + 1 = {n+1}'))
+n = st.number_input('Number')
+st.write(f'{n} + 1 = {n+1}')
 if n == '2':
     st.write("You have select:",n)
 
 if n == '3':
-    st.write('here')
     newData =pd.read_csv('K_mean_' + str(option)+'.csv')
     st.write("Check again the class variable:")
     decision = file["Decision"].value_counts().sort_index()
@@ -85,7 +84,7 @@ if n == '3':
     clf.fit(X_train,y_train)
     y_pred=clf.predict(X_test)
     prob_y_2 = clf.predict_proba(X_test)
-    prob_y_2 = [p[0] for p in prob_y_2]
+    prob_y_2 = [p[1] for p in prob_y_2]
     st.write('Recall:',recall_score(y_test, y_pred,pos_label = "Accept"))
     st.write('Accuracy score:',accuracy_score(y_test, y_pred))
     st.write('F1 score:',f1_score(y_test, y_pred,pos_label = "Accept"))
@@ -110,7 +109,7 @@ if n == '3':
     nb.fit(X_train,y_train)
     y_predGB = nb.predict(X_test)
     prob_y_3 = nb.predict_proba(X_test)
-    prob_y_3 = [p[0] for p in prob_y_3]
+    prob_y_3 = [p[1] for p in prob_y_3]
     #print('ROCAUC score:',roc_auc_score(y_test, y_pred))
     st.write('Accuracy score NB Decision:',accuracy_score(y_test, y_predGB))
     #st.write('roc_auc_score',roc_auc_score(y_test,prob_y_3) )
