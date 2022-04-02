@@ -58,8 +58,9 @@ X = pd.get_dummies(X,drop_first = True)
 
 #     newData['Label']=label
 #     newData.to_csv('K_mean_' + str(k_mean_selection[i]) + '.csv',index= False)
-
-option = st.selectbox('Select the number of cluster you wish to see:',['<select>','2','3','5'])
+# k_mean_select = ['<select','2','3','5']
+# option = st.selectbox('Select the number of cluster you wish to see:',k_mean_select)
+option = st.number_input('Number',step = 1)
 st.write(option)
 if option == '2':
     st.write("You have select:",option)
