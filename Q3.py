@@ -48,14 +48,24 @@ X = file.drop('Score',axis = 1)
 y = file['Score']
 
 X = pd.get_dummies(X,drop_first = True)
+# k_mean_selection = [2,3,5]
+# for i in range(3):
+#     newData = pd.read_csv("Bank_CreditScoring.csv")
+#     KM = KMeans(n_clusters = k_mean_selection[i],random_state = 12)
+#     KM.fit(X)
+#     label = KM.predict(X)
 
+#     newData['Label']=label
+#     newData.to_csv('K_mean_' + str(k_mean_selection[i]) + '.csv',index= False)
+# k_mean_select = ['<select','2','3','5']
+# option = st.selectbox('Select the number of cluster you wish to see:',k_mean_select)
 
-option = st.number_input('Number',step = 1)
-st.write(option)
-if option == '2':
-    st.write("You have select:",option)
+n = st.number_input('Number',step = 1)
+st.write(st.write(f'{n} + 1 = {n+1}'))
+if n == '2':
+    st.write("You have select:",n)
 
-if option != '<select>':
+if n == '3':
     st.write('here')
     newData =pd.read_csv('K_mean_' + str(option)+'.csv')
     st.write("Check again the class variable:")
